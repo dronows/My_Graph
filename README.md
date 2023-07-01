@@ -8,9 +8,10 @@ flowchart BT
 -1 --> 13
 31 --> -1
 ```
+
 ```mermaid
 flowchart TD
-  classDef class1 fill:#7FFFD4, stroke:#000, stroke-width:4px
+   classDef class1 fill:#7FFFD4, stroke:#000, stroke-width:4px
    classDef class2 fill: #FFFF00, stroke:#000, stroke-width:4px
     A(["getIndex(int vertex)"]):::class1
     B{"if(pos = map_vertexIndex.find(); \n pos!= map_vertexIndex.end()"}:::class1
@@ -30,8 +31,25 @@ flowchart TD
    
     B--TRUE-->D(["return pos->second()"]):::class2
 
-    H--> For -.-> J("adjMatrix {{ 0,0,...}, \n {0,0,...} \n } //add 0 in row")
-    For --> K(["adjMatrix.emplace_back(res+1, 0)"]):::class1 -.-> M("adjMatrix{{0,0,0}, \n {0,0,0},\n{...} \n }// add col == row.size ")
+    H--> For --add 0 in row-.-> J("adjMatrix {{ 0,0,...}, \n {0,0,...}, \n {...} \n }" )
+    For --> K(["adjMatrix.emplace_back(res+1, 0)"]):::class1 -- add col == row.size -.->J
     K --> R(["return res;"]):::class2
-    
+  ```
+
+```mermaid
+  flowchart TD
+   classDef class1 fill:#7FFFD4, stroke:#000, stroke-width:4px
+   classDef class2 fill: #FFFF00, stroke:#000, stroke-width:4px
+A(["GetNextVertices(int vertexIndex)"]):::class1
+B(["ord[vertexIndex] = cnt++;"]):::class1
+C([" for (int i = 0; i < indexVertex.size(); i++)"]):::class1
+D{{"if (adjMatrix[vertexIndex][i] == true) "}}:::class1
+E([" nextVertices.push_back(indexVertex[i]);"]):::class1
+F{{" if (ord[i] == -1) GetNextVertices(i); "}}:::class1
+A-->B-->C-->D
+D--TRUE-->E -->F
+D--FALSE-->C
+F -- FALSE -->C
+F --TRUE -->A
+C -- "if(i == indexVertex.size())"-->G(["return nextVertices;"]):::class2
 ```
