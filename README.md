@@ -13,12 +13,14 @@ flowchart BT
 flowchart TD
    classDef class1 fill:#7FFFD4, stroke:#000, stroke-width:4px
    classDef class2 fill: #FFFF00, stroke:#000, stroke-width:4px
+   classDef class3 fill: #33ff33, stroke:#000, stroke-width:4px
+   classDef class4 fill: #B2ff66, stroke:#000, stroke-width:4px
     A(["getIndex(int vertex)"]):::class1
-    B{"if(pos = map_vertexIndex.find(); \n pos!= map_vertexIndex.end()"}:::class1
+    B{{"if(pos = map_vertexIndex.find(); \n pos!= map_vertexIndex.end()"}}:::class3
      Vertexindex("map_vertexIndex \n  first: -1, 26, 100, ... \nsec:  2, 1, 0, ... ")
     IndexVertex("indexVertex \n { 100,26, -1,  ...}")
     Ord("ord \n {-1,-1,-1,...}")
-    For(["for(auto& row : adjMatrix) { \n row.push_back(0) \n }" ]):::class1
+    For(["for(auto& row : adjMatrix) { \n row.push_back(0) \n }" ]):::class4
     A-->B
     B--FALSE-->E(["const int res = indexVertex.size();"]):::class1
     E --> F(["indexVertex.push_back(vertex)"]):::class1
@@ -40,12 +42,14 @@ flowchart TD
   flowchart TD
    classDef class1 fill:#7FFFD4, stroke:#000, stroke-width:4px
    classDef class2 fill: #FFFF00, stroke:#000, stroke-width:4px
+   classDef class3 fill: #33ff33, stroke:#000, stroke-width:4px
+   classDef class4 fill: #B2ff66, stroke:#000, stroke-width:4px
 A(["GetNextVertices(int vertexIndex)"]):::class1
 B(["ord[vertexIndex] = cnt++;"]):::class1
-C([" for (int i = 0; i < indexVertex.size(); i++)"]):::class1
-D{{"if (adjMatrix[vertexIndex][i] == true) "}}:::class1
+C([" for (int i = 0; i < indexVertex.size(); i++)"]):::class4
+D{{"if (adjMatrix[vertexIndex][i] == true) "}}:::class3
 E([" nextVertices.push_back(indexVertex[i]);"]):::class1
-F{{" if (ord[i] == -1) GetNextVertices(i); "}}:::class1
+F{{" if (ord[i] == -1) GetNextVertices(i); "}}:::class3
 A-->B-->C-->D
 D--TRUE-->E -->F
 D--FALSE-->C
