@@ -116,6 +116,8 @@ D -.-> M("wenn es eine Kante gibt, \n die den Scheitelpunkt mit dem gewünschten
 N("überprüfen der Spalten in der Zeile \n mit der Nummer dieses Scheitelpunkts \n (vertexindex)") -.-> C
 ```
 
+---
+
 <br>__ListGraph__<br> 
  stellt einen Graph auf der Adjazenzliste dar
  - in der Datei main.cpp wird durch einen Graphen dargestellt
@@ -131,7 +133,7 @@ flowchart BT
 
 ---
 
-- alle Eckpunktdaten werden in  **std::map<int, std::unordered_set<<int>>>** adjList gespeichert
+- alle Eckpunktdaten werden in  **std::map<int, std::unordered_set<<int>>> adjList** gespeichert
 
 ```mermaid
 flowchart LR
