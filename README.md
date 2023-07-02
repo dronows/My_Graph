@@ -54,7 +54,7 @@ ListGraph <|-- IGraph
 <br> __MatrixGraph__<br>
 stellt einen Graph auf der Adjazenzmatrix dar
 - __int getIndex(int vertex) override__
-- gibt den Index des Stützpunkts zurück
+- gibt den Index des  Scheitelpunkts zurück
 
   ---
 
@@ -66,9 +66,9 @@ flowchart TD
    classDef class4 fill: #B2ff66, stroke:#000, stroke-width:4px
     A(["getIndex(int vertex)"]):::class1
     B{{"if(pos = map_vertexIndex.find(); \n pos!= map_vertexIndex.end()"}}:::class3
-     Vertexindex("map_vertexIndex \n  first: -1, 26, 100, ... \nsec:  2, 1, 0, ... ")
-    IndexVertex("indexVertex \n { 100,26, -1,  ...}")
-    Ord("ord \n {false,false,false,...}")
+     Vertexindex("speichern den Namen und den Index des Scheitelpunkts  \n map_vertexIndex \n  first: -1, 26, 100, ... \nsec:  2, 1, 0, ... ")
+    IndexVertex(" speichern den Scheitelpunkt für den Zugriff auf den Index \n indexVertex \n { 100,26, -1,  ...}")
+    Ord("markieren Sie den Scheitelpunkt als nicht besucht\n ord \n {false,false,false,...}")
     For(["for(auto& row : adjMatrix) { \n row.push_back(0) \n }" ]):::class4
     A-->B
     B--FALSE-->E(["const int res = indexVertex.size();"]):::class1
