@@ -120,7 +120,7 @@ N("überprüfen der Spalten in der Zeile \n mit der Nummer dieses Scheitelpunkts
 
 <br>__ListGraph__<br> 
  stellt einen Graph auf der Adjazenzliste dar
- - in der Datei main.cpp wird durch einen Graphen dargestellt
+ - die Datei main.cpp enthält ein Graph
 
 ```mermaid
 flowchart BT
